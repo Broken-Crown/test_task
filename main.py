@@ -16,6 +16,8 @@ def create_table():
 	ws.title = "Информация по операциям"
 	
 
+	for index, cell in enumerate(ws.iter_cols(max_row = 1, max_col = len(_TABLE_HEADER))):
+		cell[0].value = _TABLE_HEADER[index]
 
 	wb.save(_CUSTOM_FIRST_TABLE_PATH)
 
