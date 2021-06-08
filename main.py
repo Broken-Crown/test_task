@@ -16,7 +16,7 @@ _MAX_ROW_NUMBER: int = 10000
 _MAX_COL_NUMBER: int = len(_TABLE_INFORMATION["Header"])
 
 
-def create_table(save_path: Path):
+def create_table(table_save_path: Path):
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Информация по операциям"
@@ -42,7 +42,7 @@ def create_table(save_path: Path):
         current_date += timedelta(seconds=random.randint(0, 10))
         current_row_number += 1
 
-    wb.save(save_path)
+    wb.save(table_save_path)
 
 
 if __name__ == "__main__":
